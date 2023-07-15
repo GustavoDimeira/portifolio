@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+}
+
+.nav {
+  flex: 0 0 25%;
+  background-color: #f0f0f0;
+}
+
+.content {
+  flex: 1; /* The content will occupy the rest of the space */
+  padding: 20px;
+  /* Add any other styling you want for the content */
+}
