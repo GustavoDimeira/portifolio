@@ -1,0 +1,107 @@
+/* setting style to default */
+li *,
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-container {
+	height: 95%;
+  box-shadow: inset -7px 5px 5px 0px #000000;
+}
+
+.nav-bar-list {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.nav-bar-list li {
+  border-top: transparent solid 7px;
+  border-bottom: transparent solid 7px;
+}
+
+.nav-bar-list li,
+.border-rounded {
+  padding: 4%;
+	transition: border-color 0.4s ease-out, background-color 0.7s ease;
+}
+
+.selected li {
+  background-color: white;
+	border-top-color: black;
+  border-bottom-color: black;
+	border-right: solid white 7px;
+	transition: border-color 0.4s ease-out, background-color 0.7s ease;
+}
+
+.selected div {
+  background-color: white;
+	border-color: black;
+}
+
+.first-items {
+  padding-top: 15%;
+  padding-bottom: 0%;
+  text-align: right;
+}
+
+.first-items li {
+  display: inline-block;
+  width: 30%;
+  padding-right: 20%;
+  text-align: center;
+}
+
+.first-items div div {
+  margin-top: 10%;
+  display: inline-block;
+}
+
+.border-rounded {
+  color: transparent;
+	border: transparent solid 7px;
+  border-right: 0px;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.pagesExemple {
+  padding-top: 20%;
+  padding-left: 5%;
+}
+
+.pagesExemple ul {
+  margin-top: 0px;
+}
+
+.pagesExemple li {
+  text-align: left;
+  padding-left: 5%;
+  padding-bottom: 0px;
+  border: none;
+}
+
+.Link {
+  position: relative;
+}
+
+.Link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0px;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  transition: width 0.3s ease-out;
+}
+
+.Link:hover::after,
+.selected::after {
+  width: 100%;
+}

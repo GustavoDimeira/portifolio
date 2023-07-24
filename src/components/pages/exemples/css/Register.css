@@ -1,0 +1,80 @@
+.inVisible {
+  display: none !important;
+}
+
+.registerPage {
+  display: flex;
+  height: 90vh;
+  padding-bottom: 5vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.steps form {
+  padding: 5vh;
+  border: solid black 3px;
+  background: rgb(63,94,251);
+  background: radial-gradient(circle, rgba(63,94,251,1) 24%, rgba(70,252,247,1) 87%);
+  color: white;
+}
+
+.steps form h3 {
+  text-align: center;
+  text-decoration: underline 3px;
+  color: rgb(34, 34, 34);
+}
+
+.steps form label {
+  display: flex;
+  flex-direction: column;
+  margin: 2vh;
+}
+
+.steps form label p {
+  margin-bottom: 0px;
+}
+
+.steps form label input {
+  width: 85%;
+  padding: 7px;
+  border: none;
+  border-bottom: black solid 2px;
+}
+
+.steps .inputs {
+  padding-top: 15%;
+  padding-bottom: 20%;
+}
+
+.steps .btn-change-step {
+  display: flex;
+  justify-content: space-around;
+}
+
+.steps form button {
+  background-color: white;
+  border: rgb(1, 28, 44) solid 3px;
+  border-top-left-radius: 15%;
+  border-top-right-radius: 15%;
+  border-bottom-left-radius: 15%;
+  border-bottom-right-radius: 15%;
+  padding: 0% 5%;
+}
+
+.steps form .deActive {
+  color: black;
+  opacity: 0.7;
+  cursor: inherit;
+}
+
+.steps form .btn-next {
+  color: black;
+}
+
+.steps form .btn-prev {
+  color: black;
+}
+
+.steps form .btn-finish {
+  color: black;
+}
