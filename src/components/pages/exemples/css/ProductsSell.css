@@ -1,0 +1,534 @@
+/* page */
+
+.products-sell {
+  width: 100%;
+  height: 100%;
+}
+
+/* top bar */
+
+.top-bar {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(
+    -45deg, rgba(54,169,176,1) 25%, rgba(1,59,79,1) 70%, rgba(54,169,176,1) 100%
+  );
+  padding: 2vh;
+  
+  top: 0;
+  border: rgba(1,59,79,1) solid 1px;
+  border-top: none;
+
+  height: 6vh;
+}
+
+.img-text {
+  font-size: 4vmin;
+  border-bottom: transparent solid 1px;
+  border-top: transparent solid 1px;
+}
+
+.img-text:hover {
+  border-bottom: black solid 1px;
+  border-top: black solid 1px;
+  border-radius: 4px;
+}
+
+.search-wraper input {
+  width: 40vw;
+  height: 4vh;
+  min-height: 20px;
+  font-size: large;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #e0e0e0;
+  min-width: 30vw;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  max-height: 65vh;
+  overflow-y: scroll;
+  opacity: 0.9;
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 6px 2px;
+
+  border-bottom: black solid 1px;
+  
+}
+
+.cart-item img {
+  height: 90px;
+  width: 90px;
+}
+
+.cart-item .item-price {
+  font-size: 90%;
+}
+
+.cart-item .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.cart-item .buttons * {
+  margin: 3px;
+}
+
+.cart-item .total {
+  margin: 2px;
+}
+
+.dropdown .buy {
+  margin-top: 4px;
+}
+
+/* cards section */
+
+main {
+  display: flex;
+  height: 84vh;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+
+  overflow-y: scroll;
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+
+  margin: 0px;
+}
+
+.cards .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 22%;
+  min-width: 190px;
+  
+  max-width: 250px;
+
+  padding: 2% 2%;
+  margin: 4% 1%;
+
+  border-radius: 10px;
+  border: rgba(0,0,0,0.2) solid 1px;
+  box-shadow: 3px 3px 30px 1px rgba(0, 0, 0, 0.4);
+}
+
+.cards .item:hover {
+  box-shadow: 5px 5px 30px 4px rgba(0, 0, 0, 0.5);
+}
+
+.pre-title {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  justify-self: unset;
+}
+
+.pos-title {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  justify-self: unset;
+}
+
+.outOfOrder {
+  background-color: gray;
+}
+
+.item * {
+  max-width: 100%;
+}
+
+.item img {
+  margin: 3px 30%;
+
+  border-radius: 15px;
+  border: rgba(0,0,0,0.2) solid 1px;
+  
+  width: 90px;
+  height: 90px;
+}
+
+.discount {
+  position: relative;
+  top: -110px;
+  left: -10px;
+}
+
+.percentage {
+  display: inline;
+  background-color: red;
+  color: white;
+  padding: 10px;
+
+  border: rgb(0, 0, 0) solid 2px;
+  border-radius: 50%;
+
+  text-align: center;
+  font-size: x-large;
+}
+
+.price-wraper {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.price-wraper span {
+  padding-right: 4px;
+}
+
+.item-price {
+  font-size: large;
+  margin: 1px;
+}
+
+.item-original-price {
+  font-size: small;
+  text-decoration: line-through;
+  color: rgb(78, 78, 78);
+
+  margin-bottom: 2px;
+  padding-top: 0px;
+}
+
+.item .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.item .buttons button {
+  border: rgba(1,59,79,1) solid 2px;
+  border-radius: 15px;
+
+  font-size: medium;
+
+  padding: 4px;
+  margin: 4px;
+
+  transition: padding 0.4s ease-in-out;
+  transition: margin 0.4s ease-in-out;
+  transition: border-with 0.4s ease-in-out;
+}
+
+.item .buttons button:hover {
+  padding: 6px;
+  margin: 0px;
+
+  border-width: 3px;
+  box-shadow: 4px 4px 12px 1px rgba(0, 0, 0, 0.733);
+
+  background-color: rgba(128, 128, 128, 0.226);
+}
+
+.buttons .add:hover {
+  text-decoration: underline green;
+  border-color: green;
+}
+
+.buttons .remove:hover {
+  text-decoration: underline red;
+  border-color: red;
+}
+
+.item-quantity {
+  margin-bottom: 0px;
+  margin-top: 24px;
+  font-size: small;
+}
+
+/* filter section */
+
+.filterSection {
+  display: flex;
+  overflow: hidden;
+
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 25%;
+  padding: 1%;
+
+  background-color: #e0e0e0;
+  opacity: 0.9;
+}
+
+h3 {
+  margin: 0px;
+}
+
+.filterSection label {
+  width: 85%;
+}
+
+.filterSection label div {
+  text-decoration: underline;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 5px;
+  color: rgba(1,59,79,1);
+}
+
+.filterSection .filter-value {
+  border: none;
+  background-color: white;
+  opacity: 0.8;
+  border-bottom: black solid 2px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.inVisible {
+  display: none;
+}
+
+.slide-in-from-left {
+  animation: .4s ease-out 0s 1 slideInFromLeft forwards;
+}
+
+.slide-in-from-right {
+  animation: .4s ease-out 0s 1 slideInFromRight forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-85%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(85%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* main sections msg's */
+
+.inicial-msg, .notFound-msg {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: top;
+
+  font-size: 100%;
+  
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: underline rgba(0, 0, 0, 0.2) solid 4px;
+}
+
+.inicial-msg p, .notFound-msg {
+  margin: 10px;
+}
+
+.searching-msg {
+  display: flex;
+  align-items: center;
+}
+
+.searching-msg div {
+  width: 10vmin;
+  height: 10vmin;
+
+  border-style: solid;
+  border-width: 12px;
+  border-color: white rgba(1,59,79,1);
+  border-radius: 50%; /* This creates a circular shape */
+
+  animation: rotate 1.2s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.notFound-msg p {
+  color: red;
+  margin: 0px;
+}
+
+@media screen and (max-width: 1000px) {
+  .filterSection {
+    width: 35%;
+  }
+
+  .searching-msg div {
+    border-width: 10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .cards .item {
+    min-width: 130px;
+  
+    padding: 2% 2%;
+    margin: 3% 0%;
+  }
+
+  .item img {
+    width: 70px;
+    height: 70px;
+
+    position: relative;
+    left: -10px;
+
+    margin: 2px 30%;
+  }
+
+  .discount {
+    top: -90px;
+    font-size: small;
+  }
+  
+  .percentage {
+    padding: 6px;
+    font-size: large;
+  }
+
+  .item-price {
+    font-size: medium;
+  }
+
+  .item-title {
+    font-size: 11px;
+    margin: 6px 0px;
+  }
+
+  .buttons button {
+    font-size: small !important;
+
+    padding: 4px !important;
+    margin: 2px !important;
+  }
+
+  .item-quantity {
+    font-size: xx-small;
+    margin-top: 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .filterSection {
+    font-size: x-small;
+    width: 55%;
+  }
+
+  .searching-msg div {
+    border-width: 6px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .top-bar {
+    align-items: center;
+    height: 3vh;
+  }
+
+  .search-wraper input {
+    width: 25vw;
+    height: 0vh;
+    min-height: 15px;
+    font-size: small;
+  }
+
+  .cards .item {
+    min-width: 100px;
+  
+    padding: 1% 2%;
+    margin: 2% 0%;
+  }
+
+  .item img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .discount {
+    top: -70px;
+    font-size: x-small;
+  }
+  
+  .percentage {
+    padding: 2px;
+    font-size: small;
+  }
+
+  .price-wraper span {
+    font-size: 11px;
+  }
+
+  .item-price {
+    font-size: 13px;
+  }
+
+  .item-original-price {
+    color: rgb(75, 75, 75);
+    text-decoration: line-through .5px;
+    font-size: 9px;
+  }
+
+  .item-title {
+    font-size: 9px;
+    margin: 6px 0px;
+  }
+
+  .item .buttons button {
+    font-size: x-small !important;
+
+    padding: 3px !important;
+    margin: 1px !important;
+
+    border: rgba(1,59,79,1) solid 1px !important;
+  }
+
+  .item-quantity {
+    font-size: 8px;
+    margin-top: 10px;
+  }
+}

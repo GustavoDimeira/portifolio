@@ -1,21 +1,22 @@
-.inVisible {
-  display: none !important;
-}
-
 .registerPage {
   display: flex;
   height: 90vh;
   padding-bottom: 5vh;
   align-items: center;
   justify-content: center;
+  background-color: rgb(229, 255, 255);
+}
+
+.inVisible {
+  display: none;
 }
 
 .steps form {
   padding: 5vh;
   border: solid black 3px;
   background: rgb(63,94,251);
-  background: radial-gradient(circle, rgba(63,94,251,1) 24%, rgba(70,252,247,1) 87%);
-  color: white;
+  background: radial-gradient(circle, rgba(1,59,79,1) 40%, rgba(70,252,247,1) 110%);
+  box-shadow: 6px 6px 10px 0px rgb(0, 13, 17);
 }
 
 .steps form h3 {
@@ -25,9 +26,11 @@
 }
 
 .steps form label {
+  color: white;
   display: flex;
   flex-direction: column;
-  margin: 2vh;
+  margin: 3vh;
+  margin-bottom: 0vh;
 }
 
 .steps form label p {
@@ -35,15 +38,18 @@
 }
 
 .steps form label input {
-  width: 85%;
-  padding: 7px;
+  padding: 1vh;
   border: none;
   border-bottom: black solid 2px;
 }
 
 .steps .inputs {
-  padding-top: 15%;
-  padding-bottom: 20%;
+  padding-top: 1vh;
+  padding-bottom: 7vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .steps .btn-change-step {
@@ -54,27 +60,64 @@
 .steps form button {
   background-color: white;
   border: rgb(1, 28, 44) solid 3px;
-  border-top-left-radius: 15%;
-  border-top-right-radius: 15%;
-  border-bottom-left-radius: 15%;
-  border-bottom-right-radius: 15%;
-  padding: 0% 5%;
+  border-radius: 10%;
+  padding: 2% 7%;
+  box-shadow: 6px 6px 10px 0px rgb(0, 13, 17);
+}
+
+.steps form button:hover {
+  background-color: rgb(26, 221, 0);
+  position: relative;
+  top: -2px;
+  left: -2px;
+  transition: background-color 0.5s ease;
 }
 
 .steps form .deActive {
   color: black;
   opacity: 0.7;
   cursor: inherit;
+  background-color: white !important;
+  top: 0px !important;
+  left: 0px !important;
 }
 
-.steps form .btn-next {
-  color: black;
+.errorMsg {
+  position: absolute;
+  z-index: 1;
+  color: red;
+  background-color: wheat;
+  opacity: 0.5;
+  font-size: small;
+  border: rgb(58, 0, 82) solid 1px;
+  border-radius: 5%;
+  margin-left: 3vh;
+
+  max-width: 50vw;
 }
 
-.steps form .btn-prev {
-  color: black;
-}
+@media screen and (max-width: 560px) {
+  .steps form {
+    padding: 8px;
+  }
 
-.steps form .btn-finish {
-  color: black;
+  .registerPage h3 {
+    font-size: 15px;
+  }
+
+  .registerPage p {
+    font-size: 13px;
+  }
+
+  .registerPage input {
+    font-size: 9px;
+  }
+
+  .errorMsg {
+    font-size: 8px;
+  }
+
+  .btn-change-step {
+    font-size: 12px;
+  }
 }

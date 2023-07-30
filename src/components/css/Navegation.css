@@ -11,8 +11,9 @@ button {
 }
 
 .nav-container {
-	height: 95%;
+	height: 95vh;
   box-shadow: inset -7px 5px 5px 0px #000000;
+  font-size: large;
 }
 
 .nav-bar-list {
@@ -27,7 +28,7 @@ button {
 
 .nav-bar-list li,
 .border-rounded {
-  padding: 4%;
+  padding: 1vmin;
 	transition: border-color 0.4s ease-out, background-color 0.7s ease;
 }
 
@@ -45,7 +46,7 @@ button {
 }
 
 .first-items {
-  padding-top: 15%;
+  padding-top: 5vh;
   padding-bottom: 0%;
   text-align: right;
 }
@@ -58,7 +59,7 @@ button {
 }
 
 .first-items div div {
-  margin-top: 10%;
+  margin-top: 8vh;
   display: inline-block;
 }
 
@@ -71,7 +72,7 @@ button {
 }
 
 .pagesExemple {
-  padding-top: 20%;
+  padding-top: 15vh;
   padding-left: 5%;
 }
 
@@ -104,4 +105,35 @@ button {
 .Link:hover::after,
 .selected::after {
   width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  .nav-container {
+      font-size: medium;
+  }
+
+  .pagesExemple {
+    padding-left: 2%;
+  }
+
+  .first-items div div {
+    margin-top: 6vh;
+  }
+}
+
+@media screen and (max-height: 550px) {
+  .pagesExemple {
+    padding-top: 9vh;
+  }
+
+  .nav-container {
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .nav-container {
+    overflow-y: scroll;
+    font-size: small;
+  }
 }

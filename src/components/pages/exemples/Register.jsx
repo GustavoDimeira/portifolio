@@ -26,26 +26,28 @@ export default function Register() {
   const [SenhaErro, changeSenhaError] = useState(false);
   const [Senha2Erro, changeSenha2Error] = useState(false);
 
-  const validate = () => {
+  const firstValidation = () => {
     const NomeErro = (Nome.length < 3 || Nome.length > 15);
     const SobrenomeErro = (Sobrenome.length < 3 || Sobrenome.length > 15);
     const ApelidoErro = (Apelido.length < 3 || Sobrenome.length > 15);
+
+    changeNomeError(NomeErro); changeSobrenomeError(SobrenomeErro); changeApelidoError(ApelidoErro);
+
+    if (!(NomeErro || SobrenomeErro || ApelidoErro)) changeStep(2);
+  }
+
+  const secondValidation = () => {
     const EmailErro = !emailRegex.test(Email);
     const SenhaErro = !passwordRegex.test(Senha);
     const Senha2Erro = Senha !== Senha2;
 
-    changeNomeError(NomeErro); changeSobrenomeError(SobrenomeErro); changeApelidoError(ApelidoErro);
     changeEmailError(EmailErro); changeSenhaError(SenhaErro); changeSenha2Error(Senha2Erro);
 
-    return (
-      !(NomeErro || SobrenomeErro || ApelidoErro || EmailErro || SenhaErro || Senha2Erro)
-    );
-  };
+    if (!EmailErro || SenhaErro || Senha2Erro) finish();
+  }
 
   const finish = () => {
-    if (validate()) {
-      console.log("a");
-    }
+    console.log("a");
   };
 
   return (
@@ -58,10 +60,8 @@ export default function Register() {
               <label>
                 <p>Nome:</p>
                 <input
-                  type="text" placeholder="insira seu nome"
-                  value={Nome}
+                  type="text" placeholder="insira seu nome" value={Nome}
                   onChange={({ target }) => changeNome(target.value)}
-                  onClick={() => changeNomeError(false)}
                   onKeyDown={() => changeNomeError(false)}
                 />
               </label>
@@ -73,10 +73,8 @@ export default function Register() {
               <label>
                 <p>Sobrenome:</p>
                 <input
-                  type="text" placeholder="insira seu sobrenome"
-                  value={Sobrenome}
+                  type="text" placeholder="insira seu sobrenome" value={Sobrenome}
                   onChange={({ target }) => changeSobrenome(target.value)}
-                  onClick={() => changeSobrenomeError(false)}
                   onKeyDown={() => changeSobrenomeError(false)}
                 />
               </label>
@@ -88,10 +86,8 @@ export default function Register() {
               <label>
                 <p>Apelido:</p>
                 <input
-                  type="text" placeholder="como quer ser chamado"
-                  value={Apelido}
+                  type="text" placeholder="como quer ser chamado" value={Apelido}
                   onChange={({ target }) => changeApelido(target.value)}
-                  onClick={() => changeApelidoError(false)}
                   onKeyDown={() => changeApelidoError(false)}
                 />
               </label>
@@ -102,7 +98,8 @@ export default function Register() {
           </div>
           <div className="btn-change-step">
             <button type="button" className="deActive"> Anterior </button>
-            <button type="button" className="btn-next" onClick={() => changeStep(2)}> Proximo </button>
+            <button type="button" className="btn-next"
+            onClick={firstValidation}> Proximo </button>
           </div>
         </form>
         <form className={`setp-2 ${crrStep !== 2 && 'inVisible'}`}>
@@ -111,24 +108,21 @@ export default function Register() {
             <label>
               <p>Instagram:</p>
               <input
-                type="text"
-                value={Instagram}
+                type="text" value={Instagram}
                 onChange={({ target }) => changeInstagram(target.value)}
               />
             </label>
             <label>
               <p>Facebook:</p>
               <input
-                type="text"
-                value={Facebook}
+                type="text" value={Facebook}
                 onChange={({ target }) => changeFacebook(target.value)}
               />
             </label>
             <label>
               <p>Twiter:</p>
               <input
-                type="text"
-                value={Twiter}
+                type="text" value={Twiter}
                 onChange={({ target }) => changeTwiter(target.value)}
               />
             </label>
@@ -145,10 +139,8 @@ export default function Register() {
               <label>
                 <p>Email:</p>
                 <input
-                  type="email" placeholder="insira seu email"
-                  value={Email}
+                  type="email" placeholder="insira seu email" value={Email}
                   onChange={({ target }) => changeEmail(target.value)}
-                  onClick={() => changeEmailError(false)}
                   onKeyDown={() => changeEmailError(false)}
                 />
               </label>
@@ -160,10 +152,8 @@ export default function Register() {
               <label>
                 <p>Senha:</p>
                 <input
-                  type="password" placeholder="insira sua senha"
-                  value={Senha}
+                  type="password" placeholder="insira sua senha" value={Senha}
                   onChange={({ target }) => changeSenha(target.value)}
-                  onClick={() => changeSenhaError(false)}
                   onKeyDown={() => changeSenhaError(false)}
                 />
               </label>
@@ -175,10 +165,8 @@ export default function Register() {
               <label>
                 <p>Confirmar:</p>
                 <input
-                  type="password" placeholder="confirme sua senha"
-                  value={Senha2}
+                  type="password" placeholder="confirme sua senha" value={Senha2}
                   onChange={({ target }) => changeSenha2(target.value)}
-                  onClick={() => changeSenha2Error(false)}
                   onKeyDown={() => changeSenha2Error(false)}
                 />
               </label>
@@ -189,7 +177,7 @@ export default function Register() {
           </div>
           <div className="btn-change-step">
             <button type="button" className="btn-prev" onClick={() => changeStep(2)}> Anterior </button>
-            <button type="button" className="btn-finish" onClick={() => finish()}> Finalizar </button>
+            <button type="button" className="btn-finish" onClick={secondValidation}> Finalizar </button>
           </div>
         </form>
       </div>
