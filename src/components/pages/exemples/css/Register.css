@@ -96,7 +96,7 @@
   max-width: 50vw;
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 560px), (max-height: 560px){
   .steps form {
     padding: 8px;
   }

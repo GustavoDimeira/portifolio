@@ -10,130 +10,109 @@ button {
   cursor: pointer;
 }
 
-.nav-container {
-	height: 95vh;
+ul {
+  padding-inline-start: 0px;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  height: 95vh;
+  width: 25vw;
+
   box-shadow: inset -7px 5px 5px 0px #000000;
-  font-size: large;
+  color: white;
+
+  transition: width .3s ease-in-out, backgorund-color .2s linear;
 }
 
-.nav-bar-list {
-  padding-left: 0;
-  list-style-type: none;
+.navBar.hidden {
+  width: 5vw;
 }
 
-.nav-bar-list li {
-  border-top: transparent solid 7px;
-  border-bottom: transparent solid 7px;
+.navBar .first-items, .navBar .pagesExemple {
+  transition: scale .2s ease-in-out .1s;
 }
 
-.nav-bar-list li,
-.border-rounded {
-  padding: 1vmin;
-	transition: border-color 0.4s ease-out, background-color 0.7s ease;
+.navBar .hidden {
+  scale: 0;
+  transition-delay: 0s;
 }
 
-.selected li {
-  background-color: white;
-	border-top-color: black;
-  border-bottom-color: black;
-	border-right: solid white 7px;
-	transition: border-color 0.4s ease-out, background-color 0.7s ease;
+.hamburger-menu {
+  font-size: max(15px, min(30px, 3vw));
+  margin: 5vh 0 0 1vw;
 }
 
-.selected div {
-  background-color: white;
-	border-color: black;
+.hamburger-menu.hidden {
+  scale: 1;
 }
 
-.first-items {
-  padding-top: 5vh;
-  padding-bottom: 0%;
-  text-align: right;
-}
+.navBar .first-items {
+  padding-left: 30%;
+  padding-top: 2vh;
 
-.first-items li {
-  display: inline-block;
-  width: 30%;
-  padding-right: 20%;
+  display: flex;
+  justify-content: space-between;
+  height: 45vh;
+  max-height: 300px;
+
+  flex-direction: column;
+
   text-align: center;
+
+  font-size: max(8px, min(18px, 2vw));
 }
 
-.first-items div div {
-  margin-top: 8vh;
-  display: inline-block;
+.first-items div {
+  transition: background-color .3s ease-in, color .3s ease-in, border-color .2s ease-in;
+  border-top-left-radius: 300px;
+  border-bottom-left-radius: 300px;
 }
 
-.border-rounded {
-  color: transparent;
-	border: transparent solid 7px;
-  border-right: 0px;
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
+.first-items .notSelected {
+  border-style: solid;
+  border-color: transparent;
+  border-width: 8px 0px 8px 8px;
 }
 
-.pagesExemple {
-  padding-top: 15vh;
-  padding-left: 5%;
+.first-items .selected {
+  border-style: solid;
+  border-color: black;
+  border-width: 1.2vmin 0px 1.2vmin 1.2vmin;
+  
+  background-color: rgb(235, 253, 253);
+
+  box-shadow: 7px 0px 0px 0px rgb(235, 253, 253);
+  color: black;
 }
 
-.pagesExemple ul {
+.first-items div {
+  padding: max(4px, min(14px, 1vmin)) 0px;
+}
+
+.pagesExemple button {
+  font-size: max(8px, min(18px, 2vw));
+  text-align: left;
+}
+
+.second-items {
   margin-top: 0px;
 }
 
-.pagesExemple li {
-  text-align: left;
-  padding-left: 5%;
-  padding-bottom: 0px;
-  border: none;
+.second-items li {
+  font-size: max(7px, min(16px, 1.8vw));
+  padding: 3px;
+  padding-left: 3vw;
 }
 
-.Link {
-  position: relative;
+.second-items .selected {
+  color: black;
+  text-decoration: underline white 2px;
 }
 
-.Link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0px;
-  height: 2px;
-  background-color: rgb(255, 255, 255);
-  transition: width 0.3s ease-out;
-}
-
-.Link:hover::after,
-.selected::after {
-  width: 100%;
-}
-
-@media screen and (max-width: 900px) {
-  .nav-container {
-      font-size: medium;
-  }
-
-  .pagesExemple {
-    padding-left: 2%;
-  }
-
-  .first-items div div {
-    margin-top: 6vh;
-  }
-}
-
-@media screen and (max-height: 550px) {
-  .pagesExemple {
-    padding-top: 9vh;
-  }
-
-  .nav-container {
-    overflow-y: scroll;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .nav-container {
-    overflow-y: scroll;
-    font-size: small;
-  }
+.close li {
+  display: none;
 }

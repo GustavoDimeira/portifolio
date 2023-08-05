@@ -41,6 +41,11 @@
 
   width: 25vw;
   max-width: 240px;
+  min-width: 12px;
+}
+
+.text {
+  min-width: 120px !important;
 }
 
 ::placeholder {
@@ -63,12 +68,13 @@
 }
 
 .login-btn {
-  width: 15vw;
+  width: 17vw;
   margin: 5%;
   border: black solid 2px;
   border-radius: 30px;
   background-color: rgb(229, 255, 255);
   max-width: 130px;
+  min-width: 80px;
 }
 
 .login-page .login-btn:hover {

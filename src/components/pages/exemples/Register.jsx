@@ -142,6 +142,7 @@ export default function Register() {
                   type="email" placeholder="insira seu email" value={Email}
                   onChange={({ target }) => changeEmail(target.value)}
                   onKeyDown={() => changeEmailError(false)}
+                  autoComplete="username"
                 />
               </label>
               <span className="errorMsg">
@@ -155,6 +156,7 @@ export default function Register() {
                   type="password" placeholder="insira sua senha" value={Senha}
                   onChange={({ target }) => changeSenha(target.value)}
                   onKeyDown={() => changeSenhaError(false)}
+                  autoComplete="new-password"
                 />
               </label>
               <span className="errorMsg">
@@ -168,6 +170,7 @@ export default function Register() {
                   type="password" placeholder="confirme sua senha" value={Senha2}
                   onChange={({ target }) => changeSenha2(target.value)}
                   onKeyDown={() => changeSenha2Error(false)}
+                  autoComplete="new-password"
                 />
               </label>
               <span className="errorMsg">

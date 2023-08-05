@@ -1,0 +1,88 @@
+.skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+
+  background-color: rgb(235, 253, 253);
+}
+
+.skills div {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.skills div div {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  width: fit-content;
+  margin: 4px 10px;
+  padding: max(2px, min(8px, 1vmin));
+  border: rgba(131, 131, 131) solid 2px;
+  border-radius: 10px;
+
+  
+  color: white;
+  transition: .2s linear;
+}
+
+.skills .front-end {
+  background: linear-gradient(-135deg, rgba(109,9,231,1) 11%, rgba(176,54,75,1) 67%);
+}
+
+.skills .back-end {
+  background: linear-gradient(-145deg, rgba(176,54,75,1) 27%, rgba(226,88,54,1) 67%);
+}
+
+.skills .front-end:hover, .skills .back-end:hover {
+  border-width: 3px;
+  border-color: rgb(0, 0, 0);
+  box-shadow: 6px 6px 12px 3px rgba(0, 0, 0, 0.582);
+  transform: scale(1.05);
+}
+
+.front-end h3 {
+  text-decoration: underline 2px rgba(226,88,54,0.65);
+}
+
+.back-end h3 {
+  text-decoration: underline 2px rgba(109, 9, 231, 0.65);
+}
+
+.skills ul li:hover, .skills h3:hover {
+  transform: scale(1.1);
+  transform-origin: top;
+  text-decoration: underline solid rgba(0, 0, 0, 0.8) 2px;
+}
+
+.skills h3 {
+  text-align: center;
+  padding: 6px;
+  transition: transform 0.3s ease-out;
+
+  font-size: max(10px, min(28px, 3.2vmin));
+}
+
+.skills li {
+  margin: 0px;
+  width: fit-content;
+  transition: transform 0.3s ease-out;
+
+  font-size: max(6px, min(20px, 2.3vmin));
+  padding: max(4px, min(10px, 1vmin));
+}
+
+@media screen and (max-width: 479px) {
+  .skills div {
+    flex-direction: column;
+    width: 60%;
+  }
+
+  .skills div div {
+    width: 100%;
+    align-self: center;
+  }
+}

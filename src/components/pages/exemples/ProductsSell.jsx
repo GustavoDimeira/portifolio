@@ -87,7 +87,7 @@ const ProductsSell = () => {
 
           const tempData = { ...data };
           tempData.data[x].available_quantity -= 1;
-          tempData.data[x].cartAmount += 1;
+          tempData.data[x].cartAmount = amount + 1;
           setData(tempData);
         }
       }
@@ -171,7 +171,7 @@ const ProductsSell = () => {
           <div className='img-text'>☰</div>
         </button>
       </form>
-      <main>
+      <main className='main-section'>
         <ul className='cards'>
           {
             data.isSearching ? (
@@ -196,22 +196,24 @@ const ProductsSell = () => {
                           />
                           {
                             Math.round((1 - item.price / item.original_price) * 100) >= 10 ? (
-                              <div className='discount'>
-                                <p className='percentage'>
-                                  {Math.round((1 - item.price / item.original_price) * 100)}
-                                </p>
-                                %OFF
+                              <div>
+                                <div className='discount'>
+                                  <p className='percentage'>
+                                    {Math.round((1 - item.price / item.original_price) * 100)}
+                                  </p>
+                                  %OFF
+                                </div>
                               </div>
                             ) : <div style={{ color: "transparent" }}>a</div>
                           }
                           <div className='price-wraper'>
-                            <span>De: </span>
-                            <p className='item-original-price'>
-                              R$ {item.original_price?.toFixed(2)}
+                            <p className={
+                              `item-original-price ${!item.original_price && "empty-value"}`
+                            }>
+                              R$ {item.original_price?.toFixed(2) }
                             </p>
                           </div>
                           <div className='price-wraper'>
-                            <span>Por: </span>
                             <p className='item-price'>R$ {item.price?.toFixed(2)}</p>
                           </div>
   
