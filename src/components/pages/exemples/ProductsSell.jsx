@@ -199,9 +199,9 @@ const ProductsSell = () => {
                               <div>
                                 <div className='discount'>
                                   <p className='percentage'>
-                                    {Math.round((1 - item.price / item.original_price) * 100)}
+                                    {Math.round((1 - item.price / item.original_price) * 100)}%
                                   </p>
-                                  %OFF
+                                  OFF
                                 </div>
                               </div>
                             ) : <div style={{ color: "transparent" }}>a</div>

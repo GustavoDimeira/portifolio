@@ -182,9 +182,10 @@
   background-color: red;
   color: white;
   padding: 10px;
+  width: 100%;
 
-  border: rgb(0, 0, 0) solid 2px;
-  border-radius: 50%;
+  border: rgb(0, 0, 0) solid 1px;
+  border-radius: 5px;
 
   text-align: center;
   font-size: x-large;
@@ -239,10 +240,6 @@
 }
 
 .item .buttons button:hover {
-  padding: 6px;
-  margin: 0px;
-
-  border-width: 3px;
   box-shadow: 4px 4px 12px 1px rgba(0, 0, 0, 0.733);
 
   background-color: rgba(128, 128, 128, 0.226);

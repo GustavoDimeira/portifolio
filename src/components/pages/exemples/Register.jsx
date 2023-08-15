@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import "./css/Register.css"
+import "./css/Register.css";
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
@@ -43,12 +43,12 @@ export default function Register() {
 
     changeEmailError(EmailErro); changeSenhaError(SenhaErro); changeSenha2Error(Senha2Erro);
 
-    if (!EmailErro || SenhaErro || Senha2Erro) finish();
+    if (!(EmailErro || SenhaErro || Senha2Erro)) finish();
   }
 
   const finish = () => {
     console.log("a");
-  };
+  }
 
   return (
     <div className="registerPage">
